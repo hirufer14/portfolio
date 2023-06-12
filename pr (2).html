@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            my portfolio
+        </title>
+        <link rel="stylesheet" href="prc.css"  >
+        <script src="https://kit.fontawesome.com/cfc8a6d16b.js" crossorigin="anonymous"></script>
+       <!-- <style>
+            body {
+                background-image: url('thh.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;}
+            
+            </style>-->
+    </head>
+    <body>
+        <script>
+            // Smooth scrolling functionality
+            document.addEventListener("DOMContentLoaded", function() {
+              var navLinks = document.querySelectorAll(".nav a");
+        
+              for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener("click", function(event) {
+                  event.preventDefault();
+                  var targetSectionId = this.getAttribute("href");
+                  var targetSection = document.querySelector(targetSectionId);
+        
+                  if (targetSection) {
+                    targetSection.scrollIntoView({
+                      behavior: "smooth"
+                    });
+                  }
+                });
+              }
+            });
+          </script>
+        
+        <div class="banner">
+                <nav>
+                    <h2 class="logo">portfo<span>lio</span></h2>
+                
+                <ul>
+                    <li><a href="#s1">Home</a></li>
+                    <li><a href="#s2">About </a></li>
+                    <li><a href="#s3">services</a></li>
+                    <li><a href="#s4">skills</a></li>
+                    <li><a href="#s5">Contact</a></li>
+                </ul>
+                <a href="#" class=" btn">Subscribe</a>
+             </nav>
+            
+            
+            <div id="s1" class="content">
+                <h4>Hello I'm</h4>
+                <h1>Hiruni <span>Fernando</span></h1>
+                <h3>a WEB DEVELOPER.</h3>
+        </div>
+        </div>
+     <section class="about">
+        <div id="s2" class="main">
+            <img src="about.jpg" height="500px" width="300">
+
+            
+            <div class="about-text">
+                <h2>About me</h2>
+                <h5>Developer & <span>Designer</span></h5>
+                <p>I'm a front-end web developer.I can provide clean code and pixel perfect design.I also make the ebsite more and more interactive with web animations.A responsive designe makes your website accesible to all users,regardless of their device.
+                </p>
+                <button type="button">let's talk</button>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider-images">
+              <img class="slider-image" src="image1.jpg" alt="Image 1">
+              <img class="slider-image" src="image2.jpg" alt="Image 2">
+              <img class="slider-image" src="image3.jpg" alt="Image 3">
+            </div>
+          </div>
+        
+          <div class="slider-navigation">
+            <button id="prevButton">&lt;</button>
+            <button id="nextButton">&gt;</button>
+          </div>
+        
+          <script>
+            const sliderImages = document.querySelector('.slider-images');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            const totalImages = sliderImages.querySelectorAll('.slider-image').length;
+            let currentIndex = 0;
+        
+            prevButton.addEventListener('click', function() {
+              currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+              updateSlider();
+            });
+        
+            nextButton.addEventListener('click', function() {
+              currentIndex = (currentIndex + 1) % totalImages;
+              updateSlider();
+            });
+        
+            function updateSlider() {
+              sliderImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        
+            // Automatic sliding
+            setInterval(function() {
+              currentIndex = (currentIndex + 1) % totalImages;
+              updateSlider();
+            }, 3000);
+          </script>
+     </section>
+     <div id="s3" class="services">
+        <div class="title">
+            <h2>Our Services</h2>
+        </div>
+        <div class="box">
+            <div class="card">
+            
+                <h5>Web Development</h5>
+                <div class="pra">
+                    <p>Every website should be build with two primary goals:Firstly, it needs to work across all devices.Secondly,it needs to be fast as possible.</p>
+                    <p style="text-align: center;">
+                        <a class="button" href="#">Read More</a>
+                    </p>
+                </div>
+            </div>
+                <div class="card">
+    
+                    <h5>Web Designing</h5>
+                    <div class="pra">
+                        <p>Every website should be build with two primary goals:Firstly, it needs to work across all devices.Secondly,it needs to be fast as possible.</p>
+                        <p style="text-align: center;">
+                            <a class="button" href="#">Read More</a>
+                        </p>
+                    </div>
+                </div>
+                    <div class="card">
+                        
+                        <h5>Web Applications</h5>
+                        <div class="pra">
+                            <p>Every website should be build with two primary goals:Firstly, it needs to work across all devices.Secondly,it needs to be fast as possible.</p>
+                            <p style="text-align: center;">
+                                <a class="button" href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+        </div>
+
+
+       
+     </div>
+     <div class ="show">
+     <h1>My Projects</h1>
+     <button id="toggleButton">Toggle Additional Information</button><br></div>
+    
+     <div id="additionalInfo" class="hidden">
+       
+       <h2>Project 1</h2>
+       <p>Additional information about project 1.</p><br>
+       <h2>Project 2</h2>
+       <p>Additional information about project 2.</p></div>
+     
+     
+
+     <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const additionalInfo = document.getElementById('additionalInfo');
+    
+        toggleButton.addEventListener('click', function() {
+          additionalInfo.classList.toggle('hidden');
+        });
+      </script>
+    
+
+
+     <div class="contact-me">
+        <p>Let Me Get You A Beautiful Website. </p>
+        <a class="button-two" href="#">Hire Me</a>
+     </div>
+
+     <script>
+        function validateForm() {
+          // Get the values from the form
+          var name = document.forms["contactForm"]["name"].value;
+          var email = document.forms["contactForm"]["email"].value;
+          var phone = document.forms["contactForm"]["phone"].value;
+          
+          // Validate name field (should not be empty)
+          if (name == "") {
+            alert("Please enter your name.");
+            return false;
+          }
+          
+          // Validate email field
+          if (email == "") {
+            alert("Please enter your email address.");
+            return false;
+          }
+          // Use a regular expression to validate the email format
+          var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+          }
+          
+          // Validate phone field (optional)
+          if (phone != "") {
+            // Use a regular expression to validate the phone number format
+            var phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+              alert("Please enter a valid 10-digit phone number.");
+              return false;
+            }
+          }
+          
+          // If all fields are valid, the form can be submitted
+          alert("Form submitted successfully!");
+          return true;
+        }
+      </script>
+      <div class="cf">
+       <h1>Contact Form</h1>
+       <form name="contactForm" onsubmit="return validateForm()">
+         <label for="name">Name:</label>
+         <input type="text" name="name" required><br>
+         
+         <label for="email">Email:</label>
+         <input type="email" name="email" required><br>
+         
+         <label for="phone">Phone:</label>
+         <input type="tel" name="phone"><br>
+         
+         <input type="submit" value="Submit">
+       </form></div>
+     
+     <footer>
+        <p>
+            Hiruni Fernando
+        </p>
+        <p>For more details click the link below</p>
+        <div id="s4" class="social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="end">Copyright by Hiruni Fernando</p>
+     </footer>
+
+    </body>
+</html>
